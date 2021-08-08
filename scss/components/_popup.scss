@@ -47,11 +47,20 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
         transition: all 0.5s 0.2s;
+        @include respond(phone) {
+            display: block;
+            height: 90%;
+        }
     }
 
     &__left {
         width: 33.33333%;
         display: table-cell;
+        @include respond(phone) {
+            display: flex;
+            width: 90%;
+            padding: 2rem;
+        }
     }
     &__right {
         display: table-cell;
@@ -62,6 +71,12 @@
     &__img {
         display: block;
         width: 100%;
+        @include respond(phone) {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            margin-left: 1rem;
+        }
     }
     &__text {
         font-size: 1.4rem;
@@ -70,5 +85,11 @@
         column-count: 2;
         column-gap: 4rem;
         column-rule: 1px solid $color-gray-light-2;
+        @include respond(phone) {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
     }
 }
